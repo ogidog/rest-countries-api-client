@@ -20,8 +20,8 @@ interface ICountryListResponse {
         common: string,
         official: string,
         nativeName: {
-            hun: {
-                official: string,
+            [key: string]: {
+                official: string
                 common: string
             }
         }
@@ -45,7 +45,7 @@ export interface ICountryDetailData {
     topLevelDomain: string,
     currencies: string,
     languages: string,
-    borders: string,
+    borderCountryCodes: string,
 }
 
 interface ICountryDetailResponse {
@@ -82,13 +82,18 @@ interface ICountryDetailResponse {
     population: number
 }
 
+export interface ICountryNamesData {
+    name: string,
+    cca3: string
+}
+
 export const countriesApi = createApi({
     reducerPath: "countriesApi",
     baseQuery: fetchBaseQuery({
         baseUrl: "https://restcountries.com/v3.1/",
     }),
     endpoints: (builder) => ({
-        getCountryList: builder.query<any[], string>({
+        getCountryList: builder.query<ICountryListData[], string>({
             query: () => ({
                 url: "all",
                 params: {fields: "name,flags,population,region,capital,cca3"},
@@ -109,12 +114,12 @@ export const countriesApi = createApi({
             }
         }),
         getCountryDetail: builder.query({
-            query: (alpha3Code) => ({
-                url: `alpha/${alpha3Code}`,
+            query: (cca3: string) => ({
+                url: `alpha/${cca3}`,
                 params: {fields: "flags,name,population,region,subregion,capital,tld,currencies,languages,borders"},
                 method: "GET",
             }),
-            transformResponse: (response: ICountryDetailResponse,): ICountryDetailData => {
+            transformResponse: (response: ICountryDetailResponse): ICountryDetailData => {
                 return {
                     name: response.name.common,
                     nativeName: Object.keys(response.name.nativeName).map(key => {
@@ -133,11 +138,29 @@ export const countriesApi = createApi({
                     languages: Object.keys(response.languages).map(key => {
                         return response.languages[key]
                     }).join(", "),
-                    borders: response.borders.join(", "),
+                    borderCountryCodes: response.borders.join(", "),
                 }
             }
-        })
+        }),
+        getCountryNameByCodes: builder.query<ICountryNamesData[], string>({
+            query: (cca3List: string) => ({
+                url: 'alpha',
+                params: {
+                    codes: cca3List,
+                    fields: "name,cca3",
+                },
+                method: "GET",
+            }),
+            transformResponse: (response: ICountryListResponse[]): ICountryNamesData[] => {
+                return response.map(data => {
+                    return {
+                        name: data.name.common,
+                        cca3: data.cca3,
+                    }
+                })
+            }
+        }),
     }),
 });
 
-export const {useGetCountryListQuery, useGetCountryDetailQuery} = countriesApi;
+export const {useGetCountryListQuery, useGetCountryDetailQuery, useGetCountryNameByCodesQuery} = countriesApi;

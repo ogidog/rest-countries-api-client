@@ -13,7 +13,7 @@ export const LabelData: FC<Props> = (props) => {
     return (
         <div className={style["c-label-data"]}>
             <div className={style["c-label-data__key"]}>{label}:</div>
-            <div className={style["c-label-data__value"]}>{data}</div>
+            <div className={style["c-label-data__value"]}>{data}</div> Сделать чтоб тут можно было использовать элементы а не только текст
         </div>
     );
 };

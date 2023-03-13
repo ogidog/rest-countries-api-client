@@ -2,13 +2,12 @@
 .c-country-card-detail {
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: 50% 50%;
-
+    grid-template-columns: 50% 1fr;
     grid-column-gap: 30px;
 
-    width: 100%;
-
     margin: 50px;
+
+    width: 100%;
 }
 
 .c-country-card-detail__flag-div {
@@ -20,6 +19,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-self: flex-start;
+
 }
 
 .c-country-card-detail__name-div {

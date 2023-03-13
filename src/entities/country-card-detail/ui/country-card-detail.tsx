@@ -1,16 +1,19 @@
 import * as React from 'react';
 import {FC} from "react";
-import {ICountryDetailData,} from "shared/services/countries-service";
+import {ICountryDetailData, useGetCountryNameByCodesQuery,} from "shared/services/countries-service";
 
 import style from "./country-card-detail.module.css";
-import {Flag, LabelData, Title} from "../../../shared/ui";
+import {Flag, LabelData, Title} from "shared/ui";
 import {useSelector} from "react-redux";
-import {selectThemeMode} from "../../../shared/slices";
+import {selectThemeMode} from "shared/slices";
 
 export const CountryCardDetail: FC<ICountryDetailData> = (props) => {
 
     const themeMode = useSelector(selectThemeMode);
     const formatter = new Intl.NumberFormat();
+    const {data, error, isLoading} = useGetCountryNameByCodesQuery(props.borderCountryCodes.replace(/\s+/, ""));
+
+    console.log(data, error, isLoading)
 
     return (
         <div className={`${style["c-country-card-detail"]} ${"element_" + themeMode}`}>
