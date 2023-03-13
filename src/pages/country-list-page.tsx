@@ -1,13 +1,15 @@
 import * as React from 'react';
 import {FC} from "react";
-import style from "./country-list-page.module.css";
-import {CountryList, Header} from "widgets";
+import style from "./home-page.module.css";
 
-export const CountryListPage: FC = () => {
+import {Header} from "widgets/header/ui";
+import {Outlet, } from "react-router-dom";
+
+export const HomePage: FC = () => {
     return (
-        <div className={style["c-country-list-page"]}>
+        <div className={style["c-home"]}>
             <Header/>
-            <CountryList/>
+            <Outlet/>
         </div>
     );
 };

@@ -5,15 +5,18 @@
     padding-right: 5%;
     height: 100%;
 
+    background-color: white;
     width: fit-content;
 
     font-weight: 600;
+    color: black;
 
     cursor: pointer;
 }
 
 .c-theme-toggle:before {
     content: "";
+    background-image: url("../assets/brightness-16.png");
     background-repeat: no-repeat;
 
     width: 16px;
@@ -22,14 +25,4 @@
     padding-right: 5px;
 
     cursor: pointer;
-}
-
-.c-theme-toggle_light:before {
-    background-image: url("../assets/moon-16.png");
- }
-
-.c-theme-toggle_dark:before {
-    background-image: url("../assets/brightness-16.png");
-    filter: invert(1);
-    -webkit-filter: invert(1);
 }

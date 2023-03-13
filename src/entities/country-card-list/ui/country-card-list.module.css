@@ -1,4 +1,4 @@
-.c-country-card-list {
+.c-country-card {
     display: grid;
     grid-template-rows: 50% fit-content(100px);
 
@@ -10,7 +10,7 @@
     cursor: pointer;
 }
 
-.c-country-card-list__data-div{
+.c-country-card__data-div{
     display: flex;
     flex-direction: column;
 

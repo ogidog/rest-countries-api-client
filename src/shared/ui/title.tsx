@@ -4,15 +4,15 @@ import {FC} from "react";
 import style from "./title.module.css";
 
 type Props = {
-    text: string;
+    name: string;
     size: string
 };
 export const Title: FC<Props> = (props) => {
-    const {text, size} = props;
+    const {name, size} = props;
 
     return (
         <div className={`${style["c-title"]} ${style["c-title_" + size]}`}>
-            {text}
+            {name}
         </div>
     );
 };

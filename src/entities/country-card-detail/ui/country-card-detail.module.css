@@ -1,32 +1,3 @@
+.c-country-detail{
 
-.c-country-card-detail {
-    display: grid;
-    grid-template-rows: 100%;
-    grid-template-columns: 50% 50%;
-
-    width: 100%;
-
-    margin: 50px;
-}
-
-.c-country-card-detail__flag-div {
-    width: 50%;
-    height: 50%;
-}
-
-.c-country-card-detail__data-div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-self: flex-start;
-}
-
-.c-country-card-detail__name-div{
-    width: 100%;
-    height: fit-content;
-}
-
-.c-country-card-detail__label-data-div{
-    width: 50%;
-    height: fit-content;
 }

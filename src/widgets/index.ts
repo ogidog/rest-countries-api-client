@@ -1,5 +1,3 @@
-import {CountryList} from "./country-list/ui/country-list";
-import {Header} from "./header/ui/header";
-import {CountryDetail} from "./country-detail/ui/country-detail"
+import {CountryList} from "./country-list";
 
-export {CountryList, Header, CountryDetail};
+export {CountryList};

@@ -4,7 +4,6 @@ import style from "./header.module.css";
 import {ThemeToggle} from "features/theme-toggle/ui";
 import {useSelector} from "react-redux";
 import {selectThemeMode} from "shared/slices";
-import {Title} from "../../../shared/ui";
 
 export const Header: FC = () => {
     const themeMode = useSelector(selectThemeMode);
@@ -12,7 +11,7 @@ export const Header: FC = () => {
     return (
         <div className={`${style["c-header"]} ${"element_" + themeMode}`}>
             <div className={`${style["c-header__title"]} ${"element_" + themeMode}`}>
-                <Title text={"Where in the world?"} size={"normal"}/>
+                {"Where in the world?"}
             </div>
             <ThemeToggle/>
         </div>

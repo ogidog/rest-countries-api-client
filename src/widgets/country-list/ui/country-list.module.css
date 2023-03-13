@@ -1,12 +1,4 @@
-.c-country-list {
+.c-country-list{
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     flex-wrap: wrap;
-
-    height: fit-content;
-}
-
-.c-country-list:not(:has(div:nth-last-child(4))) {
-    justify-content: flex-start;
 }

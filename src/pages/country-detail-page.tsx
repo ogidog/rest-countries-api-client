@@ -1,15 +1,13 @@
 import * as React from 'react';
 import {FC} from "react";
 
-import style from "./country-detail-page.module.css";
-import {CountryDetail, Header} from "widgets";
+type Props = {
 
-export const CountryDetailPage: FC = () => {
+};
+export const CountryDetailPage:FC = (props: Props) => {
     return (
-        <div className={style["c-country-detail-page"]}>
-            <Header/>
-            <CountryDetail/>
-        </div>
-    );
+        <div>
 
-}
+            </div>
+    );
+};
