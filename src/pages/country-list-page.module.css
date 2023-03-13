@@ -1,16 +1,16 @@
 @media (min-width: 1440px) {
-    .c-home {
+    .c-country-list-page {
         width: 1440px;
     }
 }
 
 @media (max-width: 475px) {
-    .c-home {
+    .c-country-list-page {
         width: 100%;
     }
 }
 
-.c-home {
+.c-country-list-page {
     display: grid;
     grid-template-rows: var(--header-height) max(calc(100% - var(--header-height)), calc(100vh - var(--header-height)));
 
