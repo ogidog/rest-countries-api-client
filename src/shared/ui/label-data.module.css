@@ -1,0 +1,14 @@
+c-label-data {
+    display: inline;
+}
+
+.c-label-data__key {
+    font-weight: 800;
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+.c-label-data__value {
+    font-weight: 400;
+    font-size: 0.8em;
+}

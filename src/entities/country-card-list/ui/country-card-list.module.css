@@ -1,0 +1,21 @@
+.c-country-card {
+    display: grid;
+    grid-template-rows: 50% fit-content(100px);
+
+    width: 17%;
+    height: 290px;
+
+    margin: 50px;
+
+    cursor: pointer;
+}
+
+.c-country-card__data-div{
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+
+    width: 100%;
+    height: 100%;
+}

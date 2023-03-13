@@ -1,0 +1,10 @@
+.c-notifier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 600;
+
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+}
