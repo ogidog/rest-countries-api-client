@@ -20,9 +20,13 @@ export const CountryCardDetail: FC<ICountryDetailData> = (props) => {
                 </div>
                 <div className={style["c-country-card-detail__label-data-div"]}>
                     <LabelData label={"Native Name"} data={props.nativeName}/>
+                    <LabelData label={"Population"} data={props.population}/>
+                    <LabelData label={"Region"} data={props.region}/>
+                    <LabelData label={"Sub Region"} data={props.subRegion}/>
+                    <LabelData label={"Capital"} data={props.capital}/>
                 </div>
                 <div className={style["c-country-card-detail__label-data-div"]}>
-                    <LabelData label={"Top Level Domain"} data={props.tld}/>
+                    <LabelData label={"Top Level Domain"} data={props.topLevelDomain}/>
                 </div>
             </div>
         </div>

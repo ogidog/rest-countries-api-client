@@ -2,12 +2,12 @@ import {createApi, fetchBaseQuery,} from "@reduxjs/toolkit/query/react";
 
 export interface ICountryListData {
     name: string,
-    capital: string,
-    region: string,
-    population: number,
     flagSource: string,
     flagDescription: string,
     cca3: string,
+    capital: string,
+    region: string,
+    population: number,
 }
 
 interface ICountryListResponse {
@@ -40,12 +40,12 @@ export interface ICountryDetailData {
     nativeName: string,
     population: number,
     region: string,
-    subregion: string,
+    subRegion: string,
     capital: string,
-    tld: string,
+    topLevelDomain: string,
     currencies: string,
     languages: string,
-    borders: string,
+    borderCountries: string,
 }
 
 interface ICountryDetailResponse {
@@ -124,18 +124,17 @@ export const countriesApi = createApi({
                     flagDescription: response.flags.alt,
                     population: +response.population,
                     region: response.region,
-                    subregion: response.subregion,
+                    subRegion: response.subregion,
                     capital: response.capital.join(", "),
-                    tld: response.tld.join(", "),
+                    topLevelDomain: response.tld.join(", "),
                     currencies: Object.keys(response.currencies).map(key => {
                         return response.currencies[key].name
                     }).join(", "),
                     languages: Object.keys(response.languages).map(key => {
                         return response.languages[key]
                     }).join(", "),
-                    borders: response.borders.join(", "),
+                    borderCountries: response.borders.join(", "),
                 }
-                    ;
             }
         })
     }),
