@@ -12,8 +12,8 @@ export const LabelData: FC<Props> = (props) => {
     const {label, data} = props;
     return (
         <div className={style["c-label-data"]}>
-            <span className={style["c-label-data__key"]}>{label}:</span>
-            <span className={style["c-label-data__value"]}>{data}</span>
+            <div className={style["c-label-data__key"]}>{label}:</div>
+            <div className={style["c-label-data__value"]}>{data}</div>
         </div>
     );
 };

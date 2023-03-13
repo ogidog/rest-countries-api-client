@@ -14,7 +14,7 @@ export const CountryList: FC = () => {
     const getCards = (countryData: ICountryListData[]) => {
         return countryData.map((countryData, index) => {
             return <CountryCardList key={index} {...countryData}/>
-        }).slice(0, 5)
+        }).slice(0, 50)
     }
 
     return (
