@@ -3,14 +3,14 @@ import {FC} from "react";
 import style from "./flag.module.css";
 
 type Props = {
-    name: string,
+    alt: string,
     src: string
 };
 
 export const Flag: FC<Props> = (props: Props) => {
-    const {name, src} = props;
+    const {alt, src} = props;
 
     return (
-        <img src={src} alt={name} className={style["c-img"]}/>
+        <img src={src} alt={alt} className={style["c-img"]}/>
     );
 };

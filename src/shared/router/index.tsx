@@ -1,9 +1,14 @@
 import {createBrowserRouter} from "react-router-dom";
-import {CountryList} from "widgets/country-list/ui";
+import React from "react";
+import {CountryListPage, CountryDetailPage} from "pages";
 
 export const router = createBrowserRouter([
     {
-        path:"/list",
-        element: <CountryList/>
+        path: "/",
+        element: <CountryListPage/>,
+    },
+    {
+        path: "/detail/:cca3",
+        element: <CountryDetailPage/>
     }
 ])
