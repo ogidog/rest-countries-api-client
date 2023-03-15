@@ -1,7 +1,9 @@
 
 .c-country-detail {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 
-    justify-content: center;
-    align-items: flex-start;
+    padding: 0% 4% 0% 4%
 }

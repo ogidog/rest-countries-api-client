@@ -11,4 +11,4 @@ export const router = createBrowserRouter([
         path: "/detail/:cca3",
         element: <CountryDetailPage/>
     }
-])
+], {basename: "/"})

@@ -9,6 +9,9 @@
 
   --background-color-light: hsl(0, 0%, 96%);
   --background-color-dark: hsl(207, 26%, 17%);
+
+  --body-mobile-max-width: 475px;
+  --body-desktop-max-width: 1440px;
 }
 
 body {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FC} from "react";
-import {CountryCardDetail} from "entities/index";
+import {CountryCardDetail, CountryDetailControls} from "entities/index";
 
 import style from "./country-detail.module.css"
 import {useParams} from "react-router-dom";
@@ -13,12 +13,14 @@ export const CountryDetail: FC = () => {
     const {data, error, isLoading} = useGetCountryDetailQuery(params["cca3"]!);
 
     return (
-        // <div className={style["c-country-detail"]}></div>
-        <>
+        <div className={style["c-country-detail"]}>
             {error ? (<Notifier message={"Something went wrong"}/>) :
                 isLoading ? (<Notifier message={"Loading..."}/>) :
-                    <CountryCardDetail {...data!}/>
+                    <>
+                        <CountryDetailControls/>
+                        <CountryCardDetail {...data!}/>
+                    </>
             }
-        </>
+        </div>
     );
 };
