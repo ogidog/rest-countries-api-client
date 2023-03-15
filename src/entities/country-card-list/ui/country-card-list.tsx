@@ -4,7 +4,7 @@ import style from "./country-card-list.module.css";
 import {useSelector} from "react-redux";
 import {selectThemeMode} from "shared/slices";
 import {useNavigate} from "react-router-dom";
-import {LabelData, Title, Flag} from "shared/ui";
+import {LabeledData, Title, Flag} from "shared/ui";
 
 export const CountryCardList: FC<ICountryListData> = (props) => {
 
@@ -18,9 +18,9 @@ export const CountryCardList: FC<ICountryListData> = (props) => {
             <Flag alt={props.flagDescription} src={props.flagSource}/>
             <div className={style["c-country-card-list__data-div"]}>
                 <Title text={props.name} size={"normal"}/>
-                <LabelData label={"Population"} data={formatter.format(+props.population)}/>
-                <LabelData label={"Region"} data={props.region}/>
-                <LabelData label={"Capital"} data={props.capital}/>
+                <LabeledData label={"Population"} data={formatter.format(+props.population)}/>
+                <LabeledData label={"Region"} data={props.region}/>
+                <LabeledData label={"Capital"} data={props.capital}/>
             </div>
         </div>
     );

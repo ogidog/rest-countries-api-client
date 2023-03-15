@@ -1,5 +1,6 @@
-import {LabelData} from "./label-data";
+import {LabeledData} from "./labeled-data";
 import {Title} from "./title";
 import {Flag} from "./flag";
+import {LabeledElement} from "./labeled-element";
 
-export {LabelData, Title, Flag};
+export {LabeledData, Title, Flag, LabeledElement};

@@ -13,11 +13,12 @@ export const CountryDetail: FC = () => {
     const {data, error, isLoading} = useGetCountryDetailQuery(params["cca3"]!);
 
     return (
-        <div className={style["c-country-detail"]}>
+        // <div className={style["c-country-detail"]}></div>
+        <>
             {error ? (<Notifier message={"Something went wrong"}/>) :
                 isLoading ? (<Notifier message={"Loading..."}/>) :
                     <CountryCardDetail {...data!}/>
             }
-        </div>
+        </>
     );
 };

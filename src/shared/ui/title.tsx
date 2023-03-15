@@ -11,7 +11,7 @@ export const Title: FC<Props> = (props) => {
     const {text, size} = props;
 
     return (
-        <div className={`${style["c-title"]} ${style["c-title_" + size]}`}>
+        <div className={`${style["c-title"]}`} data-font-size={size}>
             {text}
         </div>
     );

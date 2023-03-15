@@ -3,13 +3,13 @@
     margin: 10px 0px 10px 0px;
 }
 
-.c-title_large {
+.c-title[data-font-size="large"] {
     font-weight: 800;
-    font-size: 1.4em;
+    font-size: var(--font-size-large);
 }
 
-.c-title_normal {
+.c-title[data-font-size="normal"] {
     font-weight: 800;
-    font-size: 1.0em;
+    font-size: var(--font-size-normal);
 }
 

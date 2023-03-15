@@ -1,17 +1,7 @@
-/*@media (min-width: 1440px) {*/
-/*    .c-country-detail {*/
-/*        width: 1440px;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 475px) {*/
-/*    .c-country-detail {*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/
 
 .c-country-detail {
     display: flex;
+
     justify-content: center;
     align-items: flex-start;
 }
