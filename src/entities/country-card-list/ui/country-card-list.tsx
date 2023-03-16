@@ -15,7 +15,9 @@ export const CountryCardList: FC<ICountryListData> = (props) => {
     return (
         <div className={`${style["c-country-card-list"]} ${"element_" + themeMode}`}
              onClick={() => navigate("/detail/" + props.cca3)}>
-            <Flag alt={props.flagDescription} src={props.flagSource}/>
+            <div className={style["c-country-card-list__flag-div"]}>
+                <Flag alt={props.flagDescription} src={props.flagSource}/>
+            </div>
             <div className={style["c-country-card-list__data-div"]}>
                 <Title text={props.name} size={"normal"}/>
                 <LabeledData label={"Population"} data={formatter.format(+props.population)}/>

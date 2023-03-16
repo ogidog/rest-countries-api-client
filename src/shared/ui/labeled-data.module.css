@@ -1,20 +1,17 @@
 .c-labeled-data {
-    display: flex;
+    display: grid;
+    grid-template-columns: fit-content(10px) 150px;
+    grid-column-gap: 5px;
 }
 
 .c-labeled-data__label-div {
     white-space: nowrap;
     text-wrap: none;
     font-weight: 800;
-    margin-right: 5px;
-
-    width: fit-content;
 }
 
 .c-labeled-data__data-div {
     font-weight: 400;
-    width: min(100%, 200px);
-    max-width: 200px;
     padding-right: 10px;
 }
 
