@@ -9,12 +9,13 @@ import {NavButton} from "shared/ui/nav-button";
 export const CountryCardDetail: FC<ICountryDetailData> = (props) => {
 
     const formatter = new Intl.NumberFormat();
-    const {data, error, isLoading} = useGetCountryNameByCodesQuery(props.borderCountryCodes.replace(/\s+/, ""));
+    const {data, } = useGetCountryNameByCodesQuery(props.borderCountryCodes.replace(/\s+/, ""));
 
     const getBorderCountries = () => {
-        return data ? data.map(borderCountry => {
-            return <NavButton text={borderCountry.name} size={"small"} url={"/detail/" + borderCountry.cca3}/>
-        }) : <></>
+        return data!.map((borderCountry) => {
+            return <NavButton key={borderCountry.cca3} text={borderCountry.name} size={"small"}
+                              url={"/detail/" + borderCountry.cca3}/>
+        })
     }
 
     return (
@@ -40,13 +41,14 @@ export const CountryCardDetail: FC<ICountryDetailData> = (props) => {
                         <LabeledData label={"Languages"} data={props.languages}/>
                     </div>
                 </div>
-                {
-                    data && <div>
-                        <LabeledElement label={"Border Countries"}>
-                            {getBorderCountries()}
+                <div>
+                    {
+                        data && <LabeledElement
+                            label={"Border Countries"}>{getBorderCountries()}
                         </LabeledElement>
-                    </div>
-                }
+                    }
+                </div>
+
             </div>
         </div>
     );

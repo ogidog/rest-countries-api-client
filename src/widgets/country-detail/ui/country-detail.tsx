@@ -15,8 +15,8 @@ export const CountryDetail: FC = () => {
 
     return (
         <>
-            {error ? (<Notifier message={"Something went wrong"}/>) :
-                isLoading ? (<Notifier message={"Loading..."}/>) :
+            {isLoading ? (<Notifier message={"Loading..."} data-mode={"fullscreen"}/>) :
+                error ? (<Notifier message={"Something went wrong"} data-mode={"fullscreen"}/>) :
                     <div className={style["c-country-detail"]}>
                         <div className={style["c-country-detail__controls-div"]}>
                             <NavButton text={`${String.fromCodePoint(0x02190)} Back`} size={"normal"} url={"/"}/>

@@ -21,8 +21,8 @@ export const CountryList: FC = () => {
     return (
         <>
             {
-                error ? (<Notifier message={"Something went wrong"}/>) :
-                    isLoading ? (<Notifier message={"Loading..."}/>) :
+                isLoading ? (<Notifier message={"Loading..."} data-mode={"fullscreen"}/>) :
+                    error ? (<Notifier message={"Something went wrong"} data-mode={"fullscreen"}/>) :
                         <div className={style["c-country-list"]}>
                             <div className={style["c-country-list__controls-div"]}>
                                 <CountrySearch/>

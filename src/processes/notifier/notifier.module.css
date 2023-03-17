@@ -4,7 +4,14 @@
     align-items: center;
 
     font-weight: 600;
+}
 
+.c-notifier[data-mode="fullscreen"] {
     width: 100%;
     height: calc(100vh - var(--header-height));
+}
+
+.c-notifier[data-mode="nested"] {
+    width: max-content;
+    height: fit-content;
 }
