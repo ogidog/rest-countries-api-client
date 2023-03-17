@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {FC} from "react";
 import style from "./header.module.css";
-import {ThemeToggle} from "features/theme-toggle/ui";
+import {ThemeToggle} from "features";
 import {useSelector} from "react-redux";
 import {selectThemeMode} from "shared/slices";
-import {Title} from "../../../shared/ui";
+import {Title} from "shared/ui";
 
 export const Header: FC = () => {
     const themeMode = useSelector(selectThemeMode);

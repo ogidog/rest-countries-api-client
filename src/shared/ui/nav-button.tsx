@@ -9,7 +9,7 @@ import {useNavigate} from "react-router-dom";
 type Props = {
     text: string,
     size: string,
-    url?: string;
+    url: string;
 };
 
 export const NavButton: FC<Props> = (props: Props) => {
@@ -19,11 +19,11 @@ export const NavButton: FC<Props> = (props: Props) => {
     const {text, size, url} = props;
 
     return (
-        <div className={`${style["c-nav-button"]} ${"element_" + themeMode}`}
+        <div className={`${style["nav-button"]} ${"element_" + themeMode}`}
              data-font-size={size}
              data-theme-mode={themeMode}
              onClick={() => {
-                 url && navigate(url)
+                 navigate(url)
              }}
         >
             {text}

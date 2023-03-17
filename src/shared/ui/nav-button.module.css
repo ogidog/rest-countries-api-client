@@ -1,4 +1,4 @@
-.c-nav-button{
+.nav-button{
     border-radius: 5px;
 
     padding: 2px 10px 2px 10px;
@@ -14,7 +14,7 @@
     cursor: pointer;
 }
 
-.c-nav-button[data-font-size="normal"]{
+.nav-button[data-font-size="normal"]{
     font-size: var(--font-size-normal);
     line-height: 30px;
     height: 30px;
@@ -22,16 +22,16 @@
     font-weight: 400;
 }
 
-.c-nav-button[data-font-size="small"]{
+.nav-button[data-font-size="small"]{
     font-size: var(--font-size-small);
     line-height: 25px;
     height: 25px;
 }
 
-.c-nav-button[data-theme-mode="light"]{
+.nav-button[data-theme-mode="light"]{
     box-shadow: 0px 0px 4px 2px lightgrey;
 }
 
-.c-nav-button[data-theme-mode="dark"]{
+.nav-button[data-theme-mode="dark"]{
     box-shadow: 0px 0px 4px 2px hsl(201, 25%, 14%);
 }

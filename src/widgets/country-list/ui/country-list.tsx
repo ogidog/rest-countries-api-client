@@ -5,6 +5,7 @@ import style from "./country-list.module.css";
 import {ICountryListData, useGetCountryListQuery} from "shared/services/countries-service";
 import {Notifier} from "processes/notifier";
 import {CountryCardList} from "entities/index";
+import {CountrySearch} from "features";
 
 export const CountryList: FC = () => {
 
@@ -14,15 +15,23 @@ export const CountryList: FC = () => {
     const getCards = (countryData: ICountryListData[]) => {
         return countryData.map((countryData, index) => {
             return <CountryCardList key={index} {...countryData}/>
-        }).slice(0, 50)
+        });
     }
 
     return (
-        <div className={`${style["c-country-list"]} ${"background_" + themeMode}`}>
-            {error ? (<Notifier message={"Something went wrong"}/>) :
-                isLoading ? (<Notifier message={"Loading..."}/>) :
-                    <>{getCards(data!)}</>
+        <>
+            {
+                error ? (<Notifier message={"Something went wrong"}/>) :
+                    isLoading ? (<Notifier message={"Loading..."}/>) :
+                        <div className={style["c-country-list"]}>
+                            <div className={style["c-country-list__controls-div"]}>
+                                <CountrySearch/>
+                            </div>
+                            <div className={`${style["c-country-list__list-div"]} ${"background_" + themeMode}`}>
+                                <>{getCards(data!)}</>
+                            </div>
+                        </div>
             }
-        </div>
+        </>
     );
 };

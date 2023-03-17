@@ -13,7 +13,7 @@ export const CountryCardDetail: FC<ICountryDetailData> = (props) => {
 
     const getBorderCountries = () => {
         return data ? data.map(borderCountry => {
-            return <NavButton text={borderCountry.name} size={"small"} url={"/detail/"+borderCountry.cca3}/>
+            return <NavButton text={borderCountry.name} size={"small"} url={"/detail/" + borderCountry.cca3}/>
         }) : <></>
     }
 

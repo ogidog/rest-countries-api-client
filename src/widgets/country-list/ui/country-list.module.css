@@ -1,4 +1,17 @@
-.c-country-list {
+.c-country-list{
+    display:flex;
+    flex-direction: column;
+    padding: 0px 50px 0% 50px;
+}
+
+.c-country-list__controls-div{
+    display: flex;
+    justify-content: space-between;
+
+    margin: 30px 0px 0px 0px;
+}
+
+.c-country-list__list-div {
 
     display: grid;
     grid-column-gap: 50px;
@@ -7,5 +20,5 @@
 
     height: fit-content;
 
-    padding: 30px 50px 0% 50px;
+    margin: 30px 0px 0px 0px;
 }
