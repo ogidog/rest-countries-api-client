@@ -1,21 +1,29 @@
 import React, {FC} from 'react';
 import {useSelector} from "react-redux";
-import {selectThemeMode} from "shared/slices";
+import {selectCountryNameFilter, selectThemeMode} from "shared/slices";
 import style from "./country-list.module.css";
-import {ICountryListData, useGetCountryListQuery} from "shared/services/countries-service";
+import {ICountryListData, useGetCountryListQuery} from "shared/services/country-service";
 import {Notifier} from "processes/notifier";
 import {CountryCardList} from "entities/index";
-import {CountrySearch} from "features";
+import {FilterCountryListByName} from "features";
 
 export const CountryList: FC = () => {
 
     const themeMode = useSelector(selectThemeMode);
+    const countryNameFilter = useSelector(selectCountryNameFilter);
     const {data, error, isLoading} = useGetCountryListQuery('');
 
     const getCards = (countryData: ICountryListData[]) => {
-        return countryData.map((countryData, index) => {
-            return <CountryCardList key={index} {...countryData}/>
-        });
+        if (countryNameFilter) {
+            return countryData.filter(countryDataItem => countryDataItem.name.toLowerCase().includes(countryNameFilter.toLowerCase()))
+                .map((countryDataItem, index) => {
+                    return <CountryCardList key={index} {...countryDataItem}/>
+                });
+        } else {
+            return countryData.map((countryDataItem, index) => {
+                return <CountryCardList key={index} {...countryDataItem}/>
+            });
+        }
     }
 
     return (
@@ -25,7 +33,7 @@ export const CountryList: FC = () => {
                     error ? (<Notifier message={"Something went wrong"} data-mode={"fullscreen"}/>) :
                         <div className={style["c-country-list"]}>
                             <div className={style["c-country-list__controls-div"]}>
-                                <CountrySearch/>
+                                <FilterCountryListByName/>
                             </div>
                             <div className={`${style["c-country-list__list-div"]} ${"background_" + themeMode}`}>
                                 <>{getCards(data!)}</>

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ICountryListData} from "shared/services/countries-service";
+import {ICountryListData} from "shared/services/country-service";
 import style from "./country-card-list.module.css";
 import {useSelector} from "react-redux";
 import {selectThemeMode} from "shared/slices";

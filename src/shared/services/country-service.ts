@@ -99,7 +99,7 @@ export const countriesApi = createApi({
                 params: {fields: "name,flags,population,region,capital,cca3"},
                 method: "GET",
             }),
-            transformResponse: (response: ICountryListResponse[]): ICountryListData[] => {
+            transformResponse: (response: ICountryListResponse[], meta, arg): ICountryListData[] => {
                 return response.map(data => {
                     return {
                         name: data.name.common,

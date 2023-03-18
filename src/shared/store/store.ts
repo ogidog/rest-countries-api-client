@@ -1,7 +1,7 @@
 import {configureStore} from "@reduxjs/toolkit";
 import themeReducer from "shared/slices/theme-slice";
 import countryReducer from "shared/slices/country-slice";
-import {countriesApi} from "shared/services/countries-service";
+import {countriesApi} from "shared/services/country-service";
 
 export const store = configureStore({
     reducer: {

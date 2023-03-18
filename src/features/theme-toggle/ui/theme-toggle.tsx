@@ -8,10 +8,10 @@ import {IThemeState, toggleTheme} from "shared/slices";
 
 export const ThemeToggle: FC = () => {
 
-    const themeMode = useSelector(selectThemeMode);
+    let themeMode = useSelector(selectThemeMode);
     const dispatch = useDispatch();
 
-    const oppositeThemeType = (): IThemeState["mode"] => {
+    const getThemeMode = (): IThemeState["mode"] => {
         if (themeMode === "light") {
             return "dark"
         } else {
@@ -20,13 +20,13 @@ export const ThemeToggle: FC = () => {
     }
 
     const clickHandler = () => {
-        dispatch(toggleTheme(oppositeThemeType()));
+        dispatch(toggleTheme(getThemeMode()));
     }
 
     return (
         <div className={`${style["c-theme-toggle"]} ${style["c-theme-toggle_" + themeMode]} ${"element_" + themeMode}`}
              onClick={clickHandler}>
-            {oppositeThemeType()[0].toUpperCase() + oppositeThemeType().slice(1)} Mode
+            {getThemeMode()[0].toUpperCase() + getThemeMode().slice(1)} Mode
         </div>
     );
 };

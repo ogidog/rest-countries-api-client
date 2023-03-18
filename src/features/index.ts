@@ -1,4 +1,4 @@
-import {CountrySearch} from "./search-country/ui/country-search";
+import {FilterCountryListByName} from "./filter-country-list-name/ui/filter-country-list-by-name";
 import {ThemeToggle} from "./theme-toggle/ui";
 
-export {CountrySearch, ThemeToggle}
+export {FilterCountryListByName, ThemeToggle}

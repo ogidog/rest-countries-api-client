@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FC} from "react";
-import {ICountryDetailData, useGetCountryNameByCodesQuery,} from "shared/services/countries-service";
+import {ICountryDetailData, useGetCountryNameByCodesQuery,} from "shared/services/country-service";
 
 import style from "./country-card-detail.module.css";
 import {Flag, LabeledElement, LabeledData, Title} from "shared/ui";
