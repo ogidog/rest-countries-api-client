@@ -24,8 +24,10 @@ export const ThemeToggle: FC = () => {
     }
 
     return (
-        <div className={`${style["c-theme-toggle"]} ${style["c-theme-toggle_" + themeMode]} ${"element_" + themeMode}`}
-             onClick={clickHandler}>
+        <div className={`${style["c-theme-toggle"]} ${"element_" + themeMode}`}
+             onClick={clickHandler}
+             data-theme-mode={themeMode}
+        >
             {getThemeMode()[0].toUpperCase() + getThemeMode().slice(1)} Mode
         </div>
     );

@@ -5,7 +5,7 @@ import style from "./country-list.module.css";
 import {ICountryListData, useGetCountryListQuery} from "shared/services/country-service";
 import {Notifier} from "processes/notifier";
 import {CountryCardList} from "entities/index";
-import {FilterCountryListByName} from "features";
+import {FilterCountryListByName, FilterCountryListByRegion} from "features";
 
 export const CountryList: FC = () => {
 
@@ -34,6 +34,7 @@ export const CountryList: FC = () => {
                         <div className={style["c-country-list"]}>
                             <div className={style["c-country-list__controls-div"]}>
                                 <FilterCountryListByName/>
+                                <FilterCountryListByRegion/>
                             </div>
                             <div className={`${style["c-country-list__list-div"]} ${"background_" + themeMode}`}>
                                 <>{getCards(data!)}</>

@@ -24,11 +24,11 @@
     cursor: pointer;
 }
 
-.c-theme-toggle_light:before {
+.c-theme-toggle[data-theme-mode="light"]:before {
     background-image: url("../assets/moon-16.png");
  }
 
-.c-theme-toggle_dark:before {
+.c-theme-toggle[data-theme-mode="dark"]:before {
     background-image: url("../assets/brightness-16.png");
     filter: invert(1);
     -webkit-filter: invert(1);

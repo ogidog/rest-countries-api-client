@@ -1,0 +1,92 @@
+
+.c-filter-country-list-by-region {
+    position: relative;
+    font-size: var(--font-size-small);
+
+    width: 210px;
+    height: 40px;
+
+    --self-width: 210px;
+    --self-height: 40px;
+
+    --self-background-width: 16px;
+    --self-background-height: 16px;
+
+    --option-div-height: 25px;
+}
+
+.c-filter-country-list-by-region * {
+    cursor: pointer;
+    border: 0px;
+}
+
+.c-filter-country-list-by-region__select-div {
+    width: 100%;
+    height: 100%;
+    line-height: var(--self-height);
+
+    border: 0px;
+    border-radius: 5px;
+
+    text-indent: 20px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    z-index: 99;
+}
+
+.c-filter-country-list-by-region__select-div:after {
+    content: "";
+    width: var(--self-background-width);
+    height: var(--self-background-height);
+    position: absolute;
+    top: calc(50% - var(--self-background-height) / 2);
+    left: calc(100% - var(--self-background-width) - var(--self-background-width) / 2);
+    transform: scaleY(-1);
+    background-image: url("../assets/arrow.png");
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+}
+
+.c-filter-country-list-by-region__select-div:has( + .c-filter-country-list-by-region__option-div[style="display: block;"]):after {
+    transform: scaleY(1);
+}
+
+.c-filter-country-list-by-region__select-div[data-theme-mode="dark"]:after {
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+.c-filter-country-list-by-region__option-div {
+    display: none;
+    position: absolute;
+    top: calc(var(--self-height) + 2px);
+
+    width: 100%;
+    height: fit-content;
+
+    border-radius: 5px;
+
+    padding-top: 3px;
+    padding-bottom: 4px;
+}
+
+.c-filter-country-list-by-region__option-div div {
+    display: inline-block;
+    width: 100%;
+
+    height: var(--option-div-height);
+    line-height: var(--option-div-height);
+
+    text-indent: 20px;
+
+    z-index: 99;
+}
+
+.c-filter-country-list-by-region__option-div div:hover {
+    font-weight: 800;
+}
+

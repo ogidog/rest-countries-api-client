@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
+/*style="--radius: var(--rad-50)*/
+
 :root{
   --header-height: 60px;
 
@@ -9,6 +11,9 @@
 
   --background-color-light: hsl(0, 0%, 96%);
   --background-color-dark: hsl(207, 26%, 17%);
+
+  --element-text-color-light:  hsl(200, 15%, 8%);
+  --element-text-color-dark: hsl(0, 0%, 100%);
 
   --body-mobile-max-width: 475px;
   --body-desktop-max-width: 1440px;
