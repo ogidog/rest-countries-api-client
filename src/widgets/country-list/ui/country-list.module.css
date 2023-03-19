@@ -1,18 +1,25 @@
-.c-country-list{
-    display:flex;
+.c-country-list {
+    display: flex;
     flex-direction: column;
-    padding: 0px 50px 0% 50px;
+    height: fit-content;
 }
 
-.c-country-list__controls-div{
+.c-country-list[data-theme-mode="light"]{
+    background-color: var(--background-color-light);
+}
+.c-country-list[data-theme-mode="dark"]{
+    background-color: var(--background-color-dark);
+}
+
+.c-country-list__controls-div {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
-    margin: 30px 0px 0px 0px;
+    margin: 30px min(5%, 50px) 0px min(5%, 50px);
 }
 
 .c-country-list__list-div {
-
     display: grid;
     grid-column-gap: 50px;
     grid-row-gap: 50px;
@@ -20,5 +27,5 @@
 
     height: fit-content;
 
-    margin: 30px 0px 0px 0px;
+    margin: 30px min(5%, 50px) 0px min(5%, 50px);
 }

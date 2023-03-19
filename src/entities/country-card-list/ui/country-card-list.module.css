@@ -1,5 +1,6 @@
 .c-country-card-list {
     display: grid;
+    width: 250px;
     grid-template-rows: 161px minmax(100px, 1fr);
 
     justify-self: center;
@@ -21,5 +22,5 @@
 
 .c-country-card-list__flag-div {
     border-radius: 5px;
-    aspect-ratio: auto 219 / 120;
+    /*aspect-ratio: auto 219 / 120;*/
 }

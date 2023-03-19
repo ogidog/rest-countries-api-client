@@ -1,36 +1,38 @@
 .search-country-input__wrapper-div {
     position: relative;
-    width: fit-content;
+
+    width: 295px;
+
+    margin-bottom: 10px
 }
 
 .search-country-input {
-    width: 310px;
-    height: 40px;
+    width: min(100%, 295px);
+    height: 38px;
 
-    border: 0px;
+    border: 0;
     border-radius: 5px;
 
     text-indent: 50px;
+}
+
+.search-country-input:focus {
+    outline: none;
 }
 
 .search-country-input[data-theme-mode="dark"]{
     box-shadow: 0px 0px 4px 2px hsl(201, 25%, 14%);
 }
 
-.search-country-input[data-theme-mode="dark"]::placeholder{
-    color: var(--element-text-color-dark);
-}
-
 .search-country-input[data-theme-mode="light"] {
     box-shadow: 0px 0px 5px 1px lightgrey;
 }
 
+.search-country-input[data-theme-mode="dark"]::placeholder{
+    color: var(--element-text-color-dark);
+}
 .search-country-input[data-theme-mode="light"]::placeholder {
     color: var(--element-text-color-light);
-}
-
-.search-country-input:focus {
-    outline: none;
 }
 
 .search-country-input__icon-i {

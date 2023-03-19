@@ -11,8 +11,6 @@
 
     --self-background-width: 16px;
     --self-background-height: 16px;
-
-    --option-div-height: 25px;
 }
 
 .c-filter-country-list-by-region * {
@@ -68,6 +66,9 @@
 }
 
 .c-filter-country-list-by-region__option-div {
+
+    --option-div-height: 25px;
+
     display: none;
     position: absolute;
     top: calc(var(--self-height) + 2px);

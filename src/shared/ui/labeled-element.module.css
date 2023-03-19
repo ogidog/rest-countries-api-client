@@ -1,9 +1,6 @@
 .c-labeled-elem {
     display: flex;
-    flex-wrap: wrap;
-
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: left;
 }
 
 .c-labeled-elem__label-div {
@@ -13,6 +10,8 @@
     font-weight: 600;
 
     margin-right: 5px;
+
+    align-self: flex-start;
 }
 
 .c-labeled-elem__label-div[data-font-size="small"] {
@@ -21,8 +20,4 @@
 
 .c-labeled-elem__label-div[data-font-size="normal"] {
     font-size: 1.0em;
-}
-
-.c-labeled-elem__elem-div{
-    display: flex;
 }

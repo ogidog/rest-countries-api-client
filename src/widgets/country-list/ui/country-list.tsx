@@ -35,7 +35,7 @@ export const CountryList: FC = () => {
             {
                 isLoading ? (<Notifier message={"Loading..."} data-mode={"fullscreen"}/>) :
                     error ? (<Notifier message={"Something went wrong"} data-mode={"fullscreen"}/>) :
-                        <div className={style["c-country-list"]}>
+                        <div className={style["c-country-list"]} data-theme-mode={themeMode}>
                             <div className={style["c-country-list__controls-div"]}>
                                 <FilterCountryListByName/>
                                 <FilterCountryListByRegion/>
