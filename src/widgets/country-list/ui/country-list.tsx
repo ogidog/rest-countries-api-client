@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {useSelector} from "react-redux";
-import {selectCountryNameFilter, selectThemeMode} from "shared/slices";
+import {selectCountryNameFilter, selectCountryRegionFilter, selectThemeMode} from "shared/slices";
 import style from "./country-list.module.css";
 import {ICountryListData, useGetCountryListQuery} from "shared/services/country-service";
 import {Notifier} from "processes/notifier";
@@ -11,19 +11,23 @@ export const CountryList: FC = () => {
 
     const themeMode = useSelector(selectThemeMode);
     const countryNameFilter = useSelector(selectCountryNameFilter);
+    const countryRegionFilter = useSelector(selectCountryRegionFilter);
     const {data, error, isLoading} = useGetCountryListQuery('');
 
     const getCards = (countryData: ICountryListData[]) => {
+        let filteredCountryData: ICountryListData[] = countryData;
+
         if (countryNameFilter) {
-            return countryData.filter(countryDataItem => countryDataItem.name.toLowerCase().includes(countryNameFilter.toLowerCase()))
-                .map((countryDataItem, index) => {
-                    return <CountryCardList key={index} {...countryDataItem}/>
-                });
-        } else {
-            return countryData.map((countryDataItem, index) => {
-                return <CountryCardList key={index} {...countryDataItem}/>
-            });
+            filteredCountryData = filteredCountryData.filter(countryDataItem => countryDataItem.name.toLowerCase().includes(countryNameFilter.toLowerCase()))
         }
+
+        if (countryRegionFilter) {
+            filteredCountryData = filteredCountryData.filter(countryDataItem => countryDataItem.region.toLowerCase().includes(countryRegionFilter.toLowerCase()))
+        }
+
+        return filteredCountryData.map((countryDataItem, index) => {
+            return <CountryCardList key={index} {...countryDataItem}/>
+        });
     }
 
     return (
@@ -37,7 +41,7 @@ export const CountryList: FC = () => {
                                 <FilterCountryListByRegion/>
                             </div>
                             <div className={`${style["c-country-list__list-div"]} ${"background_" + themeMode}`}>
-                                <>{getCards(data!)}</>
+                                {getCards(data!)}
                             </div>
                         </div>
             }

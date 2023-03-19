@@ -54,10 +54,17 @@
 .c-filter-country-list-by-region__select-div:has( + .c-filter-country-list-by-region__option-div[style="display: block;"]):after {
     transform: scaleY(1);
 }
-
 .c-filter-country-list-by-region__select-div[data-theme-mode="dark"]:after {
     filter: invert(1);
     -webkit-filter: invert(1);
+}
+
+.c-filter-country-list-by-region__select-div[data-theme-mode="dark"]{
+    box-shadow: 0px 0px 4px 2px hsl(201, 25%, 14%);
+}
+
+.c-filter-country-list-by-region__select-div[data-theme-mode="light"] {
+    box-shadow: 0px 0px 5px 1px lightgrey;
 }
 
 .c-filter-country-list-by-region__option-div {
