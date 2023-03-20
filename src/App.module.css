@@ -1,4 +1,6 @@
 .c-app {
     width: 100%;
-    height: max(100px, 100vh);
+    height: auto;
+    min-height: 100vh !important;
+
 }
