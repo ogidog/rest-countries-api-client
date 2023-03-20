@@ -9,7 +9,7 @@ import {NavButton} from "shared/ui/nav-button";
 export const CountryCardDetail: FC<ICountryDetailData> = (props) => {
 
     const formatter = new Intl.NumberFormat();
-    const {data,} = useGetCountryNameByCodesQuery(props.borderCountryCodes.replace(/\s+/g, ""));
+    const {data} = useGetCountryNameByCodesQuery(props.borderCountryCodes.replace(/\s+/g, ""));
 
     const getBorderCountries = () => {
         return (
@@ -48,7 +48,7 @@ export const CountryCardDetail: FC<ICountryDetailData> = (props) => {
                 <div>
                     {
                         data && <LabeledElement
-                            label={"Border Countries"}>{getBorderCountries()}
+                            label={"Border Countries: "}>{getBorderCountries()}
                         </LabeledElement>
                     }
                 </div>

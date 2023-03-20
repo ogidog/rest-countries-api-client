@@ -18,7 +18,8 @@
     justify-content: flex-start;
     align-items: center;
 
-    margin: 30px min(5%, 50px) 0% min(5%, 50px);
+    box-sizing: border-box;
+    padding: 30px min(5%, 50px) 30px min(5%, 50px);
 }
 
 .c-country-detail__controls-div {
@@ -28,5 +29,6 @@
 
     width: 100%;
 
-    margin: 30px min(5%, 50px) 0% min(5%, 50px);
+    padding: 30px min(5%, 50px) 0px min(5%, 50px);
+    box-sizing: border-box;
 }

@@ -10,7 +10,7 @@ type Props = {
 export const LabeledElement: FC<Props> = (props) => {
     return (
         <div className={style["c-labeled-elem"]}>
-            <div className={style["c-labeled-elem__label-div"]} data-font-size={"small"}>{props.label}:</div>
+            <div className={style["c-labeled-elem__label-div"]} data-font-size={"small"}>{props.label}</div>
             {props.children}
         </div>
     );

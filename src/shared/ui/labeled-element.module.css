@@ -1,17 +1,14 @@
 .c-labeled-elem {
-    display: flex;
-    justify-content: left;
+    display:grid;
+    grid-template-columns: fit-content(100px) 1fr;
+    grid-column-gap: 10px;
 }
 
 .c-labeled-elem__label-div {
+    box-sizing: border-box;
     white-space: nowrap;
-    text-wrap: none;
 
     font-weight: 600;
-
-    margin-right: 5px;
-
-    align-self: flex-start;
 }
 
 .c-labeled-elem__label-div[data-font-size="small"] {

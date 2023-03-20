@@ -37,8 +37,13 @@
     padding-bottom: 20px;
 }
 
-.c-country-card-detail__labeled-elem-div{
-    display: grid;
-    grid-template-columns: repeat(2, fit-content(150px));
-    grid-gap: 5px 5px;
+.c-country-card-detail__labeled-elem-div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.c-country-card-detail__labeled-elem-div > *{
+    margin: 0px 4px 4px 0px;
 }
