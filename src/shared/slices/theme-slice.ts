@@ -6,7 +6,7 @@ export interface IThemeState {
 }
 
 const initialState: IThemeState = {
-    mode: "light",
+    mode: localStorage["themeMode"] || "light",
 }
 
 const themeSlice = createSlice({

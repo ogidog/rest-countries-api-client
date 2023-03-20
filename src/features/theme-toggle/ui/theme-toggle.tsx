@@ -20,7 +20,9 @@ export const ThemeToggle: FC = () => {
     }
 
     const clickHandler = () => {
-        dispatch(toggleTheme(getThemeMode()));
+        let newThemeMode = getThemeMode();
+        localStorage["themeMode"] = newThemeMode;
+        dispatch(toggleTheme(newThemeMode));
     }
 
     return (
